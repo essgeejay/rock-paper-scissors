@@ -18,11 +18,9 @@
 
         // console only Rock, Paper and Scissors
 
-
-
-
-
-
+        let tieScore = 0;
+        let playerScore = 0;
+        let computerScore = 0;
 
         // A function that randomises the choice for the computer. 
         function computerPlay() {
@@ -35,40 +33,42 @@
 
             // You lose...
             if (playerSelection === 'r' && computerSelection === 'p') {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                computerScore++
                 return console.log("YOU LOSE! - Paper beats Rock!");
             }
             else if (playerSelection === 'p' && computerSelection === 's') {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                computerScore++
                 return console.log("YOU LOSE! - scissors beats paper!");
             }
             else if (playerSelection === 's' && computerSelection === 'r') {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                computerScore++
                 return console.log("YOU LOSE! - rock beats scissors!");
             }
 
             // You win...
             else if (playerSelection === 'r' && computerSelection === 's') {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                playerScore++
                 return console.log("YOU WIN! - rock beats scissors!");
             }
             else if (playerSelection === 'p' && computerSelection === 'r') {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                playerScore++
                 return console.log("YOU WIN! - Paper beats Rock!");
             }
             else if (playerSelection === 's' && computerSelection === 'p') {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                playerScore++
                 return console.log("YOU WIN! - Scissors beats Paper!");
             }
+
+            // You both tie...
             else {
-                console.log(`Computer chose: ${computerSelection}, you chose: ${playerSelection}.`)
+                tieScore++
                 return console.log("Both tie!!")
             }
 
         }
 
 
-        for (let count = 0; count <= 5; count++) {
+        for (let count = 0; count <= 4; count++) {
 
             const computerSelection = computerPlay();
             let playerSelection = prompt("(R)ock, (P)aper or (S)isscors?").toLowerCase();
@@ -86,10 +86,26 @@
             //Function call: Plays a round of a game
             playRound(playerSelection, computerSelection);
 
+        }
 
+        function result() {
+            if ((tieScore > playerScore) && (tieScore > computerScore)) {
+                return "Its a tie!"
+            }
+            else if (playerScore > computerScore) {
+                return "You win"
+            }
+            else {
+                return "You lose"
+            };
         }
 
 
+
+        console.log(`Computer score is: ${computerScore}`);
+        console.log(`Your score is: ${playerScore}`);
+
+        console.log(result());
 
 
 
