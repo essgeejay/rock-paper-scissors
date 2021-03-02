@@ -1,0 +1,37 @@
+body {
+    /* background-color: rgb(248, 251, 252); */
+    background-color: #e8e8e8;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+button {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 33px;
+    background: linear-gradient(145deg, #f8f8f8, #d1d1d1);
+    box-shadow:  11px 11px 24px #c3c3c3,
+             -11px -11px 24px #ffffff;
+    outline: none;
+    border: 0;
+    transition: background-color 5s ease-in-out;
+    background-color: red;
+}
+
+button:hover {
+    background-color: green;
+    
+}
+
+
+
