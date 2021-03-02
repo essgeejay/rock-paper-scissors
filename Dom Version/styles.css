@@ -24,13 +24,12 @@ button {
              -11px -11px 24px #ffffff;
     outline: none;
     border: 0;
-    transition: background-color 5s ease-in-out;
-    background-color: red;
+    transition: 0.7s;
+    
 }
 
 button:hover {
-    background-color: green;
-    
+    transform: translateY(10px);
 }
 
 
