@@ -25,42 +25,38 @@ function computerPlay() {
 }
 
 function disabledbuttons() {
-
+    // disable all buttons once the game reaches 5
     buttons.forEach((button) => {
         button.disabled = true
-
     });
 
 }
 
-
+function win() {
+    playerScore++
+    playscore_span.innerHTML = playerScore;
+    if ((playerScore === 5) && (playerScore > computerScore)) {
+        results_p.innerHTML = "WINWINWINWIWNIN"
+        console.log("YOU WIN - buttons disabled");
+        disabledbuttons();
+    };
+}
 
 function lose() {
     computerScore++
     computerscore_span.innerHTML = computerScore;
-    if (computerScore === 5) {
-        console.log("computer wins")
+    if ((computerScore === 5) && (computerScore > playerScore)) {
+        results_p.innerHTML = "LOSWELOSELSOE"
+        console.log("YOU LOSE - buttons disabled");
         disabledbuttons();
     };
     // document.getElementById(playerSelection).classList.add("green-glow");
 };
 
-function win() {
-    playerScore++
-    playscore_span.innerHTML = playerScore;
-    if (playerScore === 5) {
-        console.log("thats a wrap!")
-        disabledbuttons();
-    };
-}
 
 function tie() {
     computerscore_span.innerHTML = computerScore;
     playscore_span.innerHTML = playerScore;
-    // if (playerScore === computerScore) {
-    //     console.log("Nobody won!")
-    //     disabledbuttons();
-    // };
 };
 
 
@@ -69,34 +65,34 @@ function playRound(playerSelection) {
     const computerSelection = computerPlay();
     // You lose...
     if (playerSelection === 'r' && computerSelection === 'p') {
+        results_p.innerHTML = "Paper beats Rock!";
         lose();
-        results_p.innerHTML = "YOU LOSE! - Paper beats Rock!";
     }
     else if (playerSelection === 'p' && computerSelection === 's') {
+        results_p.innerHTML = "Scissors beats Paper!";
         lose();
-        results_p.innerHTML = "YOU LOSE! - Scissors beats Paper!";
     }
     else if (playerSelection === 's' && computerSelection === 'r') {
+        results_p.innerHTML = "Rock beats Scissors!";
         lose();
-        results_p.innerHTML = "YOU LOSE! - Rock beats Scissors!";
     }
     // You win...
     else if (playerSelection === 'r' && computerSelection === 's') {
+        results_p.innerHTML = "Rock beats Scissors!";
         win();
-        results_p.innerHTML = "YOU WIN! - Rock beats Scissors!";
     }
     else if (playerSelection === 'p' && computerSelection === 'r') {
+        results_p.innerHTML = "Paper beats Rock!";
         win();
-        results_p.innerHTML = "YOU WIN! - Paper beats Rock!";
     }
     else if (playerSelection === 's' && computerSelection === 'p') {
+        results_p.innerHTML = "Scissors beats Paper!";
         win();
-        results_p.innerHTML = "YOU WIN! - Scissors beats Paper!";
     }
     // You both tie...
     else {
-        tie();
         results_p.innerHTML = "Its a DRAW!"
+        tie();
     };
 
 }
@@ -117,28 +113,6 @@ function run_game() {
     })
 };
 
-
-
-// while result() {
-//     if (playerScore >= computerScore) {
-//         console.log("Nobody wins!")
-//     }
-//     else if (playerScore > computerScore) {
-//         results_p.innerHTML = "you win the game!";
-//     }
-//     else {
-//         return "You lose the game!! hahahaha"
-//     };
-// }
-
-
-
-// for (let count = 0; count <= 4; count++) {
-
-
-
-
-// }
 
 run_game();
 
