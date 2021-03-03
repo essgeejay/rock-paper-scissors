@@ -24,12 +24,20 @@ button {
              -11px -11px 24px #ffffff;
     outline: none;
     border: 0;
-    transition: 0.7s;
+    transition: 0.5s;
+
+    font-size: 20px;
+    
     
 }
 
 button:hover {
     transform: translateY(10px);
+    
+}
+
+.green-glow {
+    border: 3px solid green;
 }
 
 
