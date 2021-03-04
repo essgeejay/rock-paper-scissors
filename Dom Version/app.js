@@ -17,6 +17,8 @@ const paper_btn = document.getElementById("btnPaper");
 const scissors_btn = document.getElementById("btnScissors");
 const buttons = document.querySelectorAll('button');
 
+// document.getElementById(playerSelection).classList.add("green-glow");
+
 
 // A function that randomises the choice for the computer. 
 function computerPlay() {
@@ -36,9 +38,10 @@ function win() {
     playerScore++
     playscore_span.innerHTML = playerScore;
     if ((playerScore === 5) && (playerScore > computerScore)) {
-        results_p.innerHTML = "WINWINWINWIWNIN"
+        results_p.innerHTML = "CONGRATS - YOU WIN!!"
         console.log("YOU WIN - buttons disabled");
         disabledbuttons();
+
     };
 }
 
@@ -46,11 +49,12 @@ function lose() {
     computerScore++
     computerscore_span.innerHTML = computerScore;
     if ((computerScore === 5) && (computerScore > playerScore)) {
-        results_p.innerHTML = "LOSWELOSELSOE"
+        results_p.innerHTML = "AWW DAMN - YOU LOST!"
         console.log("YOU LOSE - buttons disabled");
         disabledbuttons();
+
     };
-    // document.getElementById(playerSelection).classList.add("green-glow");
+
 };
 
 function tie() {
@@ -58,6 +62,12 @@ function tie() {
     playscore_span.innerHTML = playerScore;
 };
 
+
+// function convert() {
+//     if ((playerSelection === "r") || (computerSelection === "r"))
+//         return "Rock";
+
+// }
 
 function playRound(playerSelection) {
 
