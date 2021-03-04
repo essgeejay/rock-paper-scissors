@@ -53,7 +53,6 @@ function lose() {
     // document.getElementById(playerSelection).classList.add("green-glow");
 };
 
-
 function tie() {
     computerscore_span.innerHTML = computerScore;
     playscore_span.innerHTML = playerScore;

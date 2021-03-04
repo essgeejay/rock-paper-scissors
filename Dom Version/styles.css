@@ -6,12 +6,14 @@ body {
 .container {
     display: flex;
     justify-content: center;
+    margin-top: 200px;
     
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    
 }
 
 button {
@@ -25,10 +27,7 @@ button {
     outline: none;
     border: 0;
     transition: 0.5s;
-
     font-size: 20px;
-    
-    
 }
 
 button:hover {
@@ -36,8 +35,87 @@ button:hover {
     
 }
 
-.green-glow {
-    border: 3px solid green;
+/* .keepscore {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+} */
+
+.keepscore div {
+    display: flex;
+    
+    position: relative;
+    width: 150px;
+    top: 150px;
+       
+}
+
+#playerscore {
+    position: relative;
+    border-radius: 10px;
+    font-size: 20px;
+    /* text-transform: uppercase; */
+    /* text-align: center; */
+    background: black;
+    color: white;
+    left: 340px;
+    z-index: 1;
+    top: 100px;
+    width: 70px;
+    height: 25px;
+    padding-left: 10px;
+}
+
+#computerscore {
+    position: relative;
+    border-radius: 10px;
+    font-size: 20px;
+    /* text-transform: uppercase; */
+    /* text-align: center; */
+    background: black;
+    color: white;
+    right: -600px;
+    z-index: 1;
+    top: 80px;
+    
+    width: 70px;
+    height: 25px;
+    padding-left: 10px;
+}
+
+
+#userscore {
+    position: absolute;
+    background-color: green;
+    top: 80px;
+    left: 380px;
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    font-size: 5rem;
+    padding-top: 0.313rem;
+    
+    
+   
+}
+
+#compscore {
+    position: absolute;
+    background-color: blue;
+    top: 80px;
+    right: 380px;
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    font-size: 5rem;
+    padding-top: 0.313rem;
 }
 
 
